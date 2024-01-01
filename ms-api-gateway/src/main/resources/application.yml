@@ -25,3 +25,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:11000/eureka/
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

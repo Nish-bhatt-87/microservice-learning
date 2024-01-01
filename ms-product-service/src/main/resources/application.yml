@@ -31,3 +31,8 @@ eureka:
 endpoint:
   ms-order-service:
     order-summary: http://ms-order-service/order/order-summary
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
