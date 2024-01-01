@@ -1,0 +1,27 @@
+
+server:
+  port: 11003
+
+spring:
+  application:
+    name: ms-api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: ms-product-service
+          uri: lb://ms-product-service
+          predicates:
+            - Path=/product/**
+
+        - id: ms-order-service
+          uri: lb://ms-order-service
+          predicates:
+            - Path=/order/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:11000/eureka/
